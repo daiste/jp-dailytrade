@@ -34,7 +34,7 @@ public class DailyTradeTest
     }
 
 
-    public void testPDFData1() throws ValidationException {
+    public void testPDFData() throws ValidationException {
         DailyTrade dt = new DailyTrade();
         dt.newInstruction(DailyTradeTestData.instrFoo1());
         dt.newInstruction(DailyTradeTestData.instrBar1());
