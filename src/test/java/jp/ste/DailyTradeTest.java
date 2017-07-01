@@ -75,6 +75,7 @@ public class DailyTradeTest
         Report report = dt.buildReport();
         printReport(report);
 
+        // by in
         assertEquals("wrong ranking ", BAR, report.orderByIn.get(0).getEntity());
         assertEquals("wrong ranking ", FOO, report.orderByIn.get(1).getEntity());
 
