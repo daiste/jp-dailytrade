@@ -62,20 +62,40 @@ public class InstructionValidator {
         return true;
     }
 
+    /**
+     * Add a "required" error to the list, if object is null
+     * @param o
+     * @param s
+     * @param errors
+     */
     private static void required(Object o, String s, List<String> errors) {
         if (o == null) errors.add(s);
     }
 
 
+    /**
+     * set Settlement Date and USD amount on a given instruction
+     * @param instr
+     */
     protected static void prepare(Instruction instr) {
         instr.setFixedSettlementDate(evaluatedSettlementDate(instr));
         instr.setUsdAmount(evaluateUsdAmount(instr));
     }
 
+    /**
+     * Evaluate the usd amount for an instruction
+     * @param instr
+     * @return
+     */
     protected static BigDecimal evaluateUsdAmount(Instruction instr) {
         return instr.getPrice().multiply(new BigDecimal(instr.getUnits())).multiply(instr.getAgreedFx());
     }
 
+    /**
+     * Evaluate the right date for the settlement, based on working days
+     * @param instr
+     * @return
+     */
     protected static LocalDate evaluatedSettlementDate(Instruction instr) {
         LocalDate req = instr.getRequestedSettlementDate();
         int offset = 0;

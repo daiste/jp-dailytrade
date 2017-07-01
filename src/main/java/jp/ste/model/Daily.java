@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
+ * Bean for daily grouping
  * Created by Stefano Formaggi on 30/06/17.
  */
 public class Daily {

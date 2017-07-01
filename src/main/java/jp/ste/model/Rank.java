@@ -3,6 +3,7 @@ package jp.ste.model;
 import java.math.BigDecimal;
 
 /**
+ * Bean for ranking order
  * Created by Stefano Formaggi on 30/06/17.
  */
 public class Rank {

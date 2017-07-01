@@ -34,6 +34,10 @@ public class DailyTradeTest
     }
 
 
+    /**
+     * Test with data given in PDF
+     * @throws ValidationException
+     */
     public void testPDFData() throws ValidationException {
         DailyTrade dt = new DailyTrade();
         dt.newInstruction(DailyTradeTestData.instrFoo1());
@@ -41,6 +45,7 @@ public class DailyTradeTest
         Report report = dt.buildReport();
         printReport(report);
 
+        //by in
         assertEquals("wrong ranking ", BAR, report.orderByIn.get(0).getEntity());
         assertEquals("wrong ranking ", FOO, report.orderByIn.get(1).getEntity());
 
@@ -53,7 +58,9 @@ public class DailyTradeTest
         assertEquals(of(2016, JANUARY, 7), report.days.get(1).getDay());
     }
 
-
+    /*+
+    Test with extra data
+     */
     public void testExtraData() throws ValidationException {
         DailyTrade dt = new DailyTrade();
         dt.newInstruction(DailyTradeTestData.instrFoo1());

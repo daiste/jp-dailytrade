@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
+ * Bean for instruction
  * Created by Stefano Formaggi on 29/06/17.
  */
 public class Instruction {

@@ -30,7 +30,7 @@ public class DailyTrade {
     }
 
     /**
-     *
+     * Build a report from instruction collected so far
      * @return
      */
     public Report buildReport() {
@@ -74,6 +74,10 @@ public class DailyTrade {
     }
 
 
+    /**
+     * Print a report to stdout
+     * @param report
+     */
     public static void printReport(Report report) {
 
         report.allInstruction.forEach(i -> System.out.println(i));
